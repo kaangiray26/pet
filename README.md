@@ -10,6 +10,7 @@ Interactive Audio Metadata Editor
 ## Features
 - Can edit a single file or files in a folder
 - Can set global tags for songs in an album
+- Automatically set tracknumber from filename
 - Probably fast and reliable?
 
 ## Usage
