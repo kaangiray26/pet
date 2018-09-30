@@ -10,7 +10,7 @@ cmdlist=["set","reset","help","save","exit"]
 globaltags={"ARTIST":"","ALBUM":"","DATE":""}
 
 os.system("clear && printf '\e[3J'")
-print "Audio Metadata Editor"
+print "PET\nAudio Metadata Editor"
 print"1)Single File\n2)Folder"
 ch1=input("\nSelect:")
 
