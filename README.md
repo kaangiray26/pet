@@ -13,5 +13,5 @@ Interactive Audio Metadata Editor
 - Probably fast and reliable?
 
 ## Usage
-    python pytag.py
+    python pet.py
 Then type in your choice and follow the hints.
