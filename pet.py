@@ -20,8 +20,13 @@ def edit(path,gb):
   ###GLOBAL Edit
   for i in globaltags.keys():
     tags[i]=globaltags[i]
-  trn=int(re.search(r'\d+', os.path.basename(path)).group())
-  tags["TRACKNUMBER"]=trn
+  trs=len(os.listdir(os.path.dirname(path)))
+  try:
+    fname=path[0:path.rfind(".")]
+    trn=int(re.search(r'\d+', fname).group())
+    tags["TRACKNUMBER"]="%s/%s" %(trn,trs)
+  except AttributeError:
+    pass
   ###
   while True:
     os.system("clear && printf '\e[3J'")
@@ -42,7 +47,10 @@ def edit(path,gb):
       for i in taglist:
         if tags[i] == "":
           data=raw_input("%s:" %(i))
-          tags[i]=data
+          if i=="TRACKNUMBER":
+            tags[i]="%s/%s" %(data,trs)
+          else:
+            tags[i]=data
           if gb==1:
             if i=="ARTIST" or i=="ALBUM" or i=="DATE":
               globaltags[i]=data
